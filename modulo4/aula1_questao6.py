@@ -1,37 +1,24 @@
-# Lê a quantidade de experimentos registrados
-N = int(input("Digite a quantidade de experimentos registrados: "))
+n = int(input("Digite a quantidade de experimentos registrados: "))
+cont = 0
+soma_sapo, soma_rato, soma_coelho = 0,0,0
 
-# Inicializa os contadores
-total_cobaias = 0
-total_sapos = 0
-total_ratos = 0
-total_coelhos = 0
 
-# Processa os experimentos
-for _ in range(N):
-    entrada = input("Digite a quantidade e o tipo de cobaia (Ex: 10 C): ").split()
-    quantia = int(entrada[0])
-    tipo = entrada[1].upper()
+while cont < n:
+    quantia = int(input("Digite a quantidade de cobaias utlizadas: "))
+    tipo = input(("Digite o tipo s, r ou c: "))
 
-    total_cobaias += quantia  # Soma ao total geral
+    if tipo == 's':
+        soma_sapo += quantia
+    elif tipo == 'r':
+        soma_rato += quantia
+    elif tipo == 'c':
+        soma_coelho += quantia
+    else:
+        print("tipo {tipo}não reconhecido!")
 
-    if tipo == 'S':  # Sapo
-        total_sapos += quantia
-    elif tipo == 'R':  # Rato
-        total_ratos += quantia
-    elif tipo == 'C':  # Coelho
-        total_coelhos += quantia
+    cont += 1
 
-# Calcula os percentuais
-percent_sapos = (total_sapos / total_cobaias) * 100 if total_cobaias > 0 else 0
-percent_ratos = (total_ratos / total_cobaias) * 100 if total_cobaias > 0 else 0
-percent_coelhos = (total_coelhos / total_cobaias) * 100 if total_cobaias > 0 else 0
-
-# Exibe os resultados
-print(f"\nTotal de cobaias: {total_cobaias}")
-print(f"Total de coelhos: {total_coelhos}")
-print(f"Total de ratos: {total_ratos}")
-print(f"Total de sapos: {total_sapos}")
-print(f"Percentual de coelhos: {percent_coelhos:.2f} %")
-print(f"Percentual de ratos: {percent_ratos:.2f} %")
-print(f"Percentual de sapos: {percent_sapos:.2f} %")
+print("Total de cobaias: ", soma_sapo + soma_rato + soma_coelho)
+print("Total de sapos: ", soma_sapo)
+print("Total de ratos:", soma_rato)
+print("Total de coelhos: ",soma_coelho)
