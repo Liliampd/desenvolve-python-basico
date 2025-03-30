@@ -1,10 +1,12 @@
 import random
 import math
+soma = 0
+n = int(input("Digite a quantidade de números que deseja gerar:"))
 
-n = int(input("Digite a quantidade de números aleatórios: "))
-valores = [random.randint(0, 100) for _ in range(n)]
-soma = sum(valores)
-raiz_quadrada = math.sqrt(soma)
+for i in range(n):
+     valor_aleatório = random.randint(0,100)#gera os valores aleatórios e guarda na variável valor_aleatório
+     print(valor_aleatório)
+     soma += valor_aleatório #Soma cada cada valor de cada iteração
 
-print(f"Os valores gerados foram: {valores}")
-print(f"A raiz quadrada da soma dos valores é: {raiz_quadrada}")
+print(f"A soma dos números gerados aleatóriamente é: {soma}")
+print(f"A raiz quadrada da soma destes números é: {math.sqrt(soma)}")
