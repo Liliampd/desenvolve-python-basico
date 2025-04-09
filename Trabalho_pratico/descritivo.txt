@@ -1,0 +1,50 @@
+# Documento Descritivo do Sistema de Gerenciamento
+
+## Introdução
+Este projeto modela um sistema de gerenciamento para uma loja de eletrônicos. O sistema permite o controle de usuários com diferentes níveis de permissão e o gerenciamento de produtos. Os tipos de usuários incluem:
+- **Gerente** (acesso total ao sistema);
+- **Funcionário** (acesso limitado a consulta e cadastro de produtos);
+- **Cliente** (apenas consulta de produtos).
+
+Os produtos oferecidos incluem itens como celulares, notebooks e acessórios, registrados com nome, preço e quantidade disponível.
+
+## Implementação
+### Estrutura de Dados
+
+#### Usuários
+Os usuários são armazenados em uma lista de dicionários com os seguintes atributos:
+- `id`: Identificador único do usuário.
+- `nome`: Nome do usuário.
+- `senha`: Senha de acesso.
+- `permissao`: Nível de acesso.
+
+#### Produtos
+Os produtos são armazenados em uma lista de dicionários com os seguintes atributos:
+- `id`: Identificador único do produto.
+- `nome`: Nome do produto.
+- `preco`: Preço do produto.
+- `quantidade`: Quantidade disponível no estoque.
+
+### Estrutura dos Arquivos de Registro
+Os usuários e produtos são armazenados em arquivos CSV para garantir persistência dos dados:
+- `usuarios.csv`: Contém os registros dos usuários, separados por vírgula.
+- `produtos.csv`: Contém os registros dos produtos, separados por vírgula.
+
+### Funcionalidades (CRUD)
+#### Usuários
+- **Create**: Criar usuário com ID, nome, senha e permissão.
+- **Read**: Listar todos os usuários cadastrados.
+- **Update**: Atualizar dados de um usuário específico.
+- **Delete**: Remover um usuário do sistema.
+
+#### Produtos
+- **Create**: Criar produto com ID, nome, preço e quantidade.
+- **Read**: Listar todos os produtos cadastrados.
+- **Update**: Atualizar dados de um produto específico.
+- **Delete**: Remover um produto do sistema.
+- **Buscar**: Permite encontrar produtos pelo nome.
+- **Ordenar**: Listar produtos ordenados por nome ou preço.
+
+## Conclusão
+O sistema foi desenvolvido utilizando estruturas condicionais, loops, funções e manipulação de arquivos para garantir a persistência dos dados. Dificuldades encontradas incluíram a organização eficiente dos dados e a implementação de permissões de usuários. Para melhorias futuras, pode-se implementar uma interface gráfica e aprimorar a segurança das senhas com criptografia.
+
